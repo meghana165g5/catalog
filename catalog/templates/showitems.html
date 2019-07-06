@@ -1,0 +1,41 @@
+{% extends 'parent.html' %}
+{% block content %}
+{% if not hasRecent%}
+	{%if category_id%}
+	<div class="container text-right">
+		<a href="{{url_for('Edit_Category',category_id=category_id)}}"><span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Edit Category"><button type="button" class="btn btn-primary">edit category</button></span></a>&nbsp&nbsp&nbsp
+		<a href="{{url_for('Delete_Category',category_id=category_id)}}"><span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Delete Category"><button type="button" class="btn btn-primary">delete category</button></span></a>&nbsp&nbsp&nbsp
+		<a href="{{url_for('Add_Mobile',category_id=category_id)}}"><span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="New Item"><button type="button" class="btn btn-primary">Add New Item</button></span></a>&nbsp
+	</div>
+	{% endif %}
+     {% else %}
+{%endif%}
+{% if Items %}
+	<div class="container">
+		<div class="card-columns">
+	{% for each in Items %}
+		
+		 	<div class="card w-76">
+		 		<div class="card-header">
+		 			<img src="{{each.image}}" width="260px" height="200px"></a>
+		 		</div>
+		    	<div class="card-footer">
+		    		<h4 style="color:blue;">{{each.name}}</h4>
+		    	
+		    		<h4>${{each.price}}</h4>
+				<div class="contain">
+					 <a href="{{url_for('Edit_Mobile',category_id=each.mobile_category_id,item_id=each.id)}}"><span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Edit Item"><button type="button" class="btn btn-primary">Edit Item</button></span></a>
+
+					<a  href="{{url_for('Delete_Mobile',category_id=each.mobile_category_id,item_id=each.id)}}"><span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Delete Item"><button type="button" class="btn btn-primary">Delete Item</button></span></a>
+					<a  href="{{url_for('Show_Mobile_Details',category_id=each.mobile_category_id,item_id=each.id)}}"><span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Delete Item"><button type="button" class="btn btn-primary">More</button></span></a>
+		 	   </div>
+		</div>
+	</div>
+	{% endfor %}
+</div>
+	</div>
+	{% else %}
+		no items found
+{% endif %}
+{% endblock %}
+

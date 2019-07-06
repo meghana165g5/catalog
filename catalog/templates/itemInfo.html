@@ -1,0 +1,27 @@
+{%extends "parent.html"%}
+{%block content%}
+<div class="container" style="width: 750px;">
+
+<div class="card-group" >
+  <div class="card bg-primary">
+    <div class="card-body text-center" style="background-color: white;">
+      <p class="card-text" style="color: black;" ><img src="{{item.image}}"  width="300px" height="400px"></p>
+    </div>
+  </div>
+  <div class="card bg-warning">
+    <div class="card-body text-center" style="background-color: white;">&nbsp
+      <p class="card-text">&nbsp&nbsp&nbsp&nbsp&nbsp
+			<ul class="list-group">
+  				<li class="list-group-item"><h1 style="color:green;">Name : {{item.name}}</h1></li>
+  				<li class="list-group-item"><h2 style="color:green;">Description:{{item.description}}</h2></li>
+ 				<li class="list-group-item"><h2 style="color:green;">Price : ${{item.price}}</h2></li>
+ 				<li class="list-group-item"><h2 style="color:green;">Brand : {{item.brand}}</h2></li>
+			</ul>
+</p>
+    </div>
+  </div>
+  
+  </div> 
+</div>
+</div>
+{%endblock%}

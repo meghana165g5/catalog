@@ -1,0 +1,24 @@
+{% extends "parent.html" %}
+{% block mystyles%}
+	
+{%endblock%}
+
+{%block content%}
+	<form action="{{ url_for('Add_Mobile',category_id=category_id)}}"
+		method="POST">
+		<fieldset>
+		<table border=0 align=center>
+		<tr><td>Item Name</td>
+			<td><input type="text" name="mname" placeholder="name" required></td></tr><br>
+		<tr><td>Item description</td><td><input type="text" name="desc" placeholder="des" required></td></tr><br>
+		<tr><td>Price</td><td><input type="text" name='price' placeholder="price" required></td></tr><br>
+		<tr><td>Brand</td><td><input type="text" name="brand" placeholder="size in brand" required></td></tr><br>
+		<tr><td>Image</td><td><input type="text" name="url" placeholder="url of the image" required></td></tr><br>
+		<tr><td><input type="submit" value="Add item"></td>
+			<td><a href="{{ url_for('home') }}" >Cancel </a></td>
+		</tr>
+	</table>
+	</fieldset>
+	</form>
+	
+{%endblock%}

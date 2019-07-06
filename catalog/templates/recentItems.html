@@ -1,0 +1,15 @@
+{% extends "parent.html" %}
+{%block content%}
+	{%if 'email' in session %}
+		{{session['email']}}
+	{% else %}
+		No email
+	{%endif%}
+	
+	{% if items %}
+		Items available
+	{% else %}
+		Not available
+	{% endif %}
+
+{% endblock %}

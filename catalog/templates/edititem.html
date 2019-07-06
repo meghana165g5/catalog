@@ -1,0 +1,16 @@
+{% extends "parent.html" %}
+{%block content%}
+<form action="{{ url_for('Edit_Mobile',category_id=item.mobile_category_id,item_id=item.id)}}"
+		method="POST">
+<table border=0 align=center>
+		<tr><td>Item Name</td>
+		<td><input type="text" name="m_name" value="{{item.name}}" required></td></tr><br>
+		<tr><td>Item description</td><td><input type="text" name="desc" value="{{item.description}}" required></td></tr><br>
+		<tr><td>Price</td><td><input type="text" name='price' value="{{item.price}}" required></td></tr><br>
+		<tr><td>Brand</td><td><input type="text" name="brand" value="{{item.brand}}" required></td></tr><br>
+		<tr><td>Image</td><td><input type="text" name="url" value="{{item.image}}" required></td></tr><br>
+		<tr><td><input type="submit" value="Edit item"></td>
+		<td><a href="{{ url_for('home') }}" >Cancel </a></td>
+		</tr>
+	</table>
+{%endblock%}
